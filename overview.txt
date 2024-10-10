@@ -1,0 +1,91 @@
+##Zip analogy? commit = zip + metadata
+##git is smart -- dedup, stores parents
+
+##manipulate the graph.
+
+##create a commit
+
+##worktree, index, HEAD (this is goint to be prant of a new commit)
+
+#demoS
+#vscode
+git init
+git commit --allow-empty
+#sidescript
+
+#boilerplate
+cat ../demos/1calc > calc.py   
+git add .
+git commit
+
+cat ../demos/2calc > calc.py   
+git add .
+git commit 
+#demoE
+
+##restore, checkout
+
+#demoS
+git checkout HEAD~
+cat ../demos/3.1calc > calc.py   
+git add .
+git commit 
+
+cat ../demos/3.2calc > calc.py   
+git add .
+
+cat ../demos/3.3calc > calc.py # wont commit   
+
+git restore calc.py #index2wt
+git restore --staged -s HEAD calc.py #head2index
+
+cat ../demos/3test > test.sh
+
+git add calc.py
+
+git restore --worktree -s HEAD calc.py
+run test.sh #fails
+git commit
+demoE
+
+
+##branch
+
+demoS
+git branch sub
+git checkout "boilerplate"
+git checkout sub
+
+
+demoE
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#Manipulate the history:
+Add commit 
+WT, index, local hist, server hist, (reflog?)
+
+WT->index, index->commit (amend?)
+commit->index,index->WT (reset, restore)
+
+branches (checkout)
+
+#Merging
+
+
+#Cherry-pick, interactive rebase
+
+
